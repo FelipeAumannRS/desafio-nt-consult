@@ -1,4 +1,4 @@
-package com.br.config.kafka;
+package com.nt.configuration.kafka;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ public class KafkaTopicConfiguration {
 
     @Bean
     NewTopic notificationTopic() {
-        return TopicBuilder.name("conta-notification")
+        return TopicBuilder.name("nt-topic")
                 .build();
     }
 }

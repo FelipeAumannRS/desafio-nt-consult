@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "994e7284-2d6b-465a-94be-924917d02616",
+		"name": "NT Consult",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16466848"
+	},
+	"item": [
+		{
+			"name": "Hotels",
+			"item": [
+				{
+					"name": "Search hotels by",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotels/search?checkIn=2024-09-10T14:00:00&availableRooms=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotels",
+								"search"
+							],
+							"query": [
+								{
+									"key": "destination",
+									"value": "bbb",
+									"description": "INFO: Você pode selecionar quantos filtros desejar",
+									"disabled": true
+								},
+								{
+									"key": "checkIn",
+									"value": "2024-09-10T14:00:00",
+									"description": "INFO: Você pode selecionar quantos filtros desejar"
+								},
+								{
+									"key": "checkOut",
+									"value": "2024-09-15T11:00:00",
+									"description": "INFO: Você pode selecionar quantos filtros desejar",
+									"disabled": true
+								},
+								{
+									"key": "availableRooms",
+									"value": "0",
+									"description": "INFO: Você pode selecionar quantos filtros desejar"
+								},
+								{
+									"key": "guestsCount",
+									"value": "0",
+									"description": "INFO: Você pode selecionar quantos filtros desejar",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compare hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotels/compare?sortBy=destination",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotels",
+								"compare"
+							],
+							"query": [
+								{
+									"key": "sortBy",
+									"value": "destination",
+									"description": "INFO: Você pode selecionar apenas 1 parâmetro de comparação por vez."
+								},
+								{
+									"key": "sortBy",
+									"value": "rating",
+									"description": "INFO: Você pode selecionar apenas 1 parâmetro de comparação por vez.",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "commodities",
+									"description": "INFO: Você pode selecionar apenas 1 parâmetro de comparação por vez.",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "price",
+									"description": "INFO: Você pode selecionar apenas 1 parâmetro de comparação por vez.",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Count hotels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete hotel",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/hotels/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotels",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create hotel",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sunshine Resort\",\r\n    \"destination\": \"Curitiba\",\r\n    \"availableRooms\": 10,\r\n    \"guestsCount\": 0,\r\n    \"price\": 111.50,\r\n    \"rating\": 5,\r\n    \"commodities\": [\"FREE_WIFI\", \"SWIMMING_POOL\", \"GYM\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/hotels/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"hotels",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Create booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hotelId\": 2,\r\n  \"checkIn\": \"2024-09-10T14:00:00\",\r\n  \"checkOut\": \"2024-09-15T11:00:00\",\r\n  \"status\": \"AVAILABLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bookings/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bookings",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hotelId\": \"1\",\r\n  \"guestName\": \"John Doe\",\r\n  \"guestContat\": \"john.doe@example.com\",\r\n  \"paymentDetail\": \"Credit Card ending in 1234\",\r\n  \"guestsCount\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/bookings/reserve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bookings",
+								"reserve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List bookins by Hotel ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/bookings/list?hotelId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"bookings",
+								"list"
+							],
+							"query": [
+								{
+									"key": "hotelId",
+									"value": "1",
+									"description": "ID do hotel para listagem de bookings (reservas)"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
